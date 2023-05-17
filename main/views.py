@@ -16,7 +16,7 @@ import cv2
 
 IMG_SIZE = 50
 MODEL_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'models')
-MODEL_FILEPATH = os.path.join(MODEL_DIR, 'my_model.h5')
+MODEL_FILEPATH = os.path.join(MODEL_DIR, 'old_my_model.h5')
 print(MODEL_FILEPATH)
 model = keras.models.load_model(MODEL_FILEPATH)
 my_dict = { 0:'а', 1:'ә', 2:'з', 3:'и', 4:'і', 5:'й', 
