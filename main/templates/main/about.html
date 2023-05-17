@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+
+{% block title%}About me page{% endblock %}
+
+{% block content%}
+    <h2>Temirlan Torebekov</h2>
+    <p> I am 2-year student of Astana IT University.</p>
+    <div>
+        <a id="go-main" href="{% url 'home' %}"><li>Go to Main Page</li></a>
+        <a id="go-news" href="{% url 'news_home' %}"><li>Go News Page</li></a>
+    </div>
+    
+{% endblock %}

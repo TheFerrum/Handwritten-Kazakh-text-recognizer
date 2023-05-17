@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+
+{% block title%}Articles{% endblock %}
+
+{% block content%}
+    <h1> Articles</h1>
+
+    {% if articles %}
+        {% for el in articles%}
+            <div class="alert alert-warning">
+                <h3>{{el.title}}</h3>
+                <p>{{el.author}}</p>
+                <a href="{% url 'articles-detail' el.id %}" class="btn btn-warning">Read more</a>
+            </div>
+        {% endfor %}
+    {% else %}
+            <p>No articles!</p>
+    {% endif%}
+
+    {# Comments#}
+{% endblock %}

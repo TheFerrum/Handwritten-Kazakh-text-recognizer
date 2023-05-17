@@ -1,0 +1,117 @@
+body{
+    background: #2c2c2c;
+    display: flex;
+    flex-direction: row;
+}
+a {
+    text-decoration: none;
+}
+aside{
+    float: left;
+    background: #181818;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 25%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+    display: table-cell;
+}
+
+aside img{
+    width: 80px;
+    float: left;
+}
+
+aside .logo{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+
+aside h3{
+    margin-top: 50px;
+    font-size: 28px;
+}
+
+aside ul{
+    list-style: none;
+}
+
+aside ul li{
+    color: #fff;
+    display: block;
+    margin-top: 20px;
+    transition: transform .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover{
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main{
+    float: left;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 25%;
+    text-align: center;
+    width: 75%;
+}
+
+main .features h1{font-size: 50px}
+main .features p{max-width: 400px; margin: 20px auto;}
+
+.alert-warning{
+    float: left;
+    clear: both;
+    width: 400px;
+    margin: 20px 34%;
+    text-align: left;
+}
+
+form{
+    margin-left: 32%;
+    width: 500px;
+    margin-top: 50px;
+}
+
+.app .controls{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.app .controls .title{
+    font-weight: 600;
+    width: 80px;   
+}
+
+.app .controls .type input:checked+label{
+    background: #111;
+    color: #eee;
+    border-radius: 50%;
+}
+
+.app .controls .size{
+    margin-left: 10px;
+}
+
+.app .controls .size input{
+    height: 10px;
+}
+
+.app .controls .actions{
+    padding-left: 20px;
+    flex: 1;
+    text-align: left;
+}
+
+#image_list{
+    width: 50%;
+}

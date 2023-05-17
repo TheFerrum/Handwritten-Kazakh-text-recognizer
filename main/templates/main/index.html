@@ -1,0 +1,34 @@
+{% extends 'main/layout.html' %}
+
+{% block title%}{{title}}{% endblock %}
+
+{% block content%}
+    <h4> {{title}}</h4>
+    <div class="app">
+        <div class="result">
+            <h1>Your prediction is: </h1>
+        </div>
+        <div class="controls">
+            <div class="title">Sketch</div>
+            <i class="fa fa-paint-brush" id="pen-brush"></i>
+            <div class="size">
+                <label for="pen-size">Size</label>
+                <input type="range" id="pen-size" min="25" max="50">
+            </div>
+            <div class="color">
+                <label for="pen-color">Color</label>
+                <input type="color" id="pen-color" value="#000">
+            </div>
+            <div class="actions">
+                <button id="clear-canvas" class="btn btn-light">Clear</button>
+                {% csrf_token %}
+                <button id="save-canvas" class="btn btn-light">Save</button>
+                <button id="predict-canvas" class="btn btn-light">Predict</button>
+                <button id="send-img" class="btn btn-light">Send Image</button>
+                <input type="file" id="image-input" name="image">
+            </div>
+        </div>
+        <div id="canvas-wrapper"></div>
+          
+    </div>
+{% endblock %}

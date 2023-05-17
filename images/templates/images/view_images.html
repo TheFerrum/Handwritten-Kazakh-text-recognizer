@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title%}Images{% endblock %}
+
+{% block content %}
+  <h2>Your Images</h2>
+  {% if images %}
+    <div class="image-gallery">
+      {% for image in images %}
+        <div class="image-container">
+          <img src="{{image}}" alt="{{ image }}" style="width:50%">
+          <!-- <p>{{ image }}</p> -->
+          <p> </p>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>You haven't saved any images yet.</p>
+  {% endif %}
+
+{% endblock %}
