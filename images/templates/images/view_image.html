@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title%}Image{% endblock %}
+
+{% block content %}
+  <h2>Your Image</h2>
+  {% if image %}
+    <div class="image">
+        <div class="image-container">
+          <img src="{{ image }}" alt="{{ image }}" style="width:50%">
+        </div>
+    </div>
+  {% else %}
+    <p>You haven't saved any images yet.</p>
+  {% endif %}
+
+{% endblock %}

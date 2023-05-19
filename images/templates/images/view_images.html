@@ -8,8 +8,9 @@
     <div class="image-gallery">
       {% for image in images %}
         <div class="image-container">
-          <img src="{{image}}" alt="{{ image }}" style="width:50%">
-          <!-- <p>{{ image }}</p> -->
+          <img src="{{ image }}" alt="{{ image }}" style="width:50%">
+              {% csrf_token %}
+              <button class="btn btn-danger delete-button" onclick="deleteImage('{{ image }}')">Delete</button>
           <p> </p>
         </div>
       {% endfor %}

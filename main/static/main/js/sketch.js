@@ -155,3 +155,40 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.error(error));
     });
 });
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+
+
+function deleteImage(imageName) {
+    var csrftoken = getCookie('csrftoken'); 
+    $.ajax({
+      url: '/images/delete-image/', // Replace with the actual URL of your Django backend function
+      type: 'POST',
+      headers: {
+        'X-CSRFToken': csrftoken // Include the CSRF token in the request headers
+      },
+      data: {
+        image_name: imageName
+      },
+      success: function(response) {
+        console.log(response); // Print the image name returned by the Django backend
+        location.reload();
+      },
+      error: function(xhr, status, error) {
+        console.error(xhr.responseText);
+      }
+    });
+  }
