@@ -2,60 +2,28 @@ function _(selector){
     return document.querySelector(selector);
 }
 
-
-var marks = [];
-var pencil;
-// var isFirstLine = true;
-
 function setup(){
-    let canvas = createCanvas(1000, 650);
-    canvas.parent("canvas-wrapper");
+    const sketchContainer = document.getElementById('canvas-wrapper');
+    const canvas = createCanvas(1000,650);
+    canvas.parent('canvas-wrapper');
+    sketch = select('#canvas-wrapper canvas');
+
+    penSizeInput = select('#pen-size');
+    penColorInput = select('#pen-color');
+
     background(255);
-    // var penSizeInput = select("#pen-size");
-    // var penColorInput = select("#pen-color");
-
-    // var penSize = parseInt(penSizeInput.value());
-    // var penColor = penColorInput.value();
-    // pencil = new Marker(penSize, penColor);
-    // penSizeInput.changed(updatePenSize);
-    // penColorInput.changed(updatePenColor);
 }
 
-// function draw() {
-//     background(255);
-//     pencil.displayMarkings();
-// }
+function draw() {
+    if (mouseIsPressed) {
+      const penSize = penSizeInput.value();
+      const penColor = penColorInput.value();
 
-// function mousePressed() {
-//     pencil.startDrawing();
-// }
-  
-// function mouseReleased() {
-//     pencil.stopDrawing();
-// }
-
-// function mouseDragged() {
-//     pencil.draw(mouseX, mouseY);
-// }
-
-// function updatePenSize() {
-//     var newSize = parseInt(this.value());
-//     pencil.setSize(newSize);
-// }
-  
-// function updatePenColor() {
-//     var newColor = this.value();
-//     pencil.setColor(newColor);
-// }
-
-function mouseDragged(){
-    let size = parseInt(_("#pen-size").value);
-    let color = _("#pen-color").value;
-    fill(color);
-    stroke(color);
-    strokeWeight(1);
-    ellipse(mouseX, mouseY, size, size);
-}
+      stroke(penColor);
+      strokeWeight(penSize);
+      line(pmouseX, pmouseY, mouseX, mouseY);
+    }
+  }
 
 function clearCanvas(){
     background(255);
