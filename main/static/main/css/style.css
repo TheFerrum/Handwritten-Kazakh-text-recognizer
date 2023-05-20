@@ -115,3 +115,11 @@ form{
 #image_list{
     width: 50%;
 }
+
+#image-input{
+    margin-top: 5px;
+}
+
+#canvas-wrapper{
+    margin-top: 10px;
+}

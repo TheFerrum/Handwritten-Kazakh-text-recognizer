@@ -1,6 +1,9 @@
 function _(selector){
     return document.querySelector(selector);
 }
+let sketch;
+let penSizeInput, penColorInput;
+let eraserButton;
 
 function setup(){
     const sketchContainer = document.getElementById('canvas-wrapper');
@@ -10,21 +13,35 @@ function setup(){
 
     penSizeInput = select('#pen-size');
     penColorInput = select('#pen-color');
+    eraserButton = select('#eraser');
 
     background(255);
+
+    eraserButton.mousePressed(useEraser);
 }
 
 function draw() {
     if (mouseIsPressed) {
-      const penSize = penSizeInput.value();
-      const penColor = penColorInput.value();
+        const penSize = penSizeInput.value();
+        const penColor = penColorInput.value();
 
-      stroke(penColor);
-      strokeWeight(penSize);
-      line(pmouseX, pmouseY, mouseX, mouseY);
-    }
+        if (eraserButton.elt.classList.contains('active')) {
+          // Use eraser
+          stroke(255);
+          strokeWeight(penSize);
+        } else {
+          // Use pencil
+          stroke(penColor);
+          strokeWeight(penSize);
+        }
+
+        line(pmouseX, pmouseY, mouseX, mouseY);
+      }
   }
 
+function useEraser() {
+    eraserButton.elt.classList.toggle('active');
+}
 function clearCanvas(){
     background(255);
 }

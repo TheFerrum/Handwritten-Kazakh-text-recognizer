@@ -20,11 +20,12 @@
                 <input type="color" id="pen-color" value="#000">
             </div>
             <div class="actions">
+                <button id="eraser" class="btn btn-light">Eraser</button>
                 <button id="clear-canvas" class="btn btn-light">Clear</button>
                 {% csrf_token %}
                 <button id="save-canvas" class="btn btn-light">Save</button>
                 <button id="predict-canvas" class="btn btn-light">Predict</button>
-                <button id="send-img" class="btn btn-light">Send Image</button>
+                <button id="send-img" class="btn btn-light">Predict Image</button>
                 <input type="file" id="image-input" name="image">
             </div>
         </div>
