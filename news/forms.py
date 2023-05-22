@@ -9,11 +9,11 @@ class NewsForm(ModelForm):
         widgets = {
             "title": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Article name'
+                'placeholder': 'News article name'
             }),
             "anons": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Article anons'
+                'placeholder': 'News article anons'
             }),
             "date": DateTimeInput(attrs={
                 'class': 'form-control',
@@ -21,6 +21,6 @@ class NewsForm(ModelForm):
             }),
             "full_text": Textarea(attrs={
                 'class': 'form-control',
-                'placeholder': 'Article text'
+                'placeholder': 'News article text'
             })
         }
